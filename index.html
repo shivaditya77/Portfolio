@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivaditya Singh | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles & Variables */
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4d44db;
+            --dark: #2a2a2a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+            --leetcode-orange: #ffa116;
+            --linkedin-blue: #0a66c2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 100px 5%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        #home {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            min-height: 4.5rem; /* Ensure space for the typing animation */
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            margin-right: 15px;
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            width: 40%;
+            max-width: 500px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Typing Animation */
+        .typewriter {
+            display: inline-block;
+            position: relative;
+        }
+
+        .typewriter::after {
+            content: '|';
+            position: absolute;
+            right: 0;
+            color: var(--primary);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* About Section */
+        #about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            max-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .skills {
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(108, 99, 255, 0.05) 100%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.project-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .project-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .project-links a:hover {
+            color: var(--secondary);
+        }
+
+        .project-links a i {
+            margin-right: 5px;
+        }
+
+        /* Resume Section */
+        #resume {
+            background-color: white;
+        }
+
+        .resume-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .resume-column {
+            flex: 1;
+        }
+
+        .resume-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .resume-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .resume-item::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--primary);
+        }
+
+        .resume-date {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .resume-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .resume-item h4 {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .resume-item p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .resume-item ul {
+            color: var(--gray);
+            line-height: 1.6;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        /* LinkedIn Section */
+        #linkedin {
+            background: linear-gradient(135deg, rgba(10, 102, 194, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        .linkedin-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .linkedin-stats {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .linkedin-stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .linkedin-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .linkedin-stat-card h3 {
+            font-size: 2rem;
+            color: var(--linkedin-blue);
+            margin-bottom: 5px;
+        }
+
+        .linkedin-stat-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .linkedin-profile {
+            flex: 1;
+            text-align: center;
+        }
+
+        .linkedin-profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .linkedin-profile h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .linkedin-profile p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .linkedin-btn {
+            background-color: var(--linkedin-blue);
+            color: white;
+        }
+
+        .linkedin-btn:hover {
+            background-color: #084a8e;
+        }
+
+        /* LeetCode Section */
+        #leetcode {
+            background: linear-gradient(135deg, rgba(255, 161, 22, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        .leetcode-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .leetcode-stats {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .leetcode-stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .leetcode-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .leetcode-stat-card h3 {
+            font-size: 2rem;
+            color: var(--leetcode-orange);
+            margin-bottom: 5px;
+        }
+
+        .leetcode-stat-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .leetcode-profile {
+            flex: 1;
+            text-align: center;
+        }
+
+        .leetcode-profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .leetcode-profile h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .leetcode-profile p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .leetcode-btn {
+            background-color: var(--leetcode-orange);
+            color: white;
+        }
+
+        .leetcode-btn:hover {
+            background-color: #e69100;
+        }
+
+        /* GitHub Section */
+        #github {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        .github-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: var(--gray);
+        }
+
+        .github-projects {
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Animations */
+        .animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-image {
+                display: none;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .resume-container {
+                flex-direction: column;
+            }
+
+            .linkedin-container,
+            .leetcode-container {
+                flex-direction: column;
+            }
+
+            .linkedin-stats,
+            .leetcode-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 30px;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar container">
+            <a href="#" class="logo">Shivaditya.</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#linkedin">LinkedIn</a></li>
+                <li><a href="#leetcode">LeetCode</a></li>
+                <li><a href="#github">GitHub</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content animate">
+                <h1><span class="typewriter" id="typewriter"></span></h1>
+                <p>Software Developer with passion for creating beautiful and functional web applications. I specialize in frontend development with React and modern JavaScript frameworks.</p>
+                <a href="#projects" class="btn">View My Work</a>
+                <div class="social-links">
+                    <a href="https://github.com/shivaditya77" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/shivaditya-singh-125a6a280/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://leetcode.com/shivaditya77/" target="_blank"><i class="fas fa-code"></i></a>
+                    <a href="https://x.com/shivaditya77" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <img src="https://via.placeholder.com/500x500" alt="" class="hero-image animate" style="animation-delay: 0.2s;">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title animate">About Me</h2>
+            <div class="about-content">
+                <div class="about-image animate">
+                    <img src="about.jpeg" alt="Shivaditya Singh" style="max-height: 400px; width: auto;">
+                </div>
+                <div class="about-text animate" style="animation-delay: 0.2s;">
+                    <h3>Software Developer based in India</h3>
+                    <p>I'm a passionate web development enthusiast, currently building my skills and projects in full-stack development. Eager to learn and grow, I enjoy turning ideas into interactive web applications. I love turning complex problems into simple, beautiful and intuitive solutions.</p>
+                    <p>When I'm not coding, you'll find me at the gym, watching YouTube development tutorials, or contributing to open source projects.</p>
+                    
+                    <div class="skills">
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>React</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Node.js</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>UI/UX Design</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title animate">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card animate">
+                    <div class="project-image">
+                        <img src="lce.jpeg" alt="Live Code Editor" style="object-position: top;">
+                    </div>
+                    
+                    <div class="project-info">
+                        <h3>Live Code Editor</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p>Developed an interactive Live Code Editor using HTML, CSS, and JavaScript that allows users to write and test code in real-time with separate panels for HTML, CSS, and JavaScript.</p>
+                        <div class="project-links">
+                            <a href="https://shivaditya77.github.io/Live_Code-_editor/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/shivaditya77/Live_Code-_editor" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card animate" style="animation-delay: 0.2s;">
+                    <div class="project-image">
+                        <img src="diamondminner.jpeg" alt="Diamond Miner Game" style="object-position: center;">
+                    </div>
+                    <div class="project-info">
+                        <h3>Diamond Miner Game</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p>Developed a 2D Diamond Miner game using HTML, CSS, and JavaScript with interactive gameplay, score tracking, and timer functionality where players collect diamonds while avoiding obstacles.</p>
+                        <div class="project-links">
+                            <a href="https://shivaditya77.github.io/diamond_mining_game/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/shivaditya77/diamond_mining_game" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card animate" style="animation-delay: 0.4s;">
+                    <div class="project-image">
+                        <img src="ytclone.jpeg" alt="YouTube Clone" style="object-position: top;">
+                    </div>
+                    
+                    <div class="project-info">
+                        <h3>YouTube Clone</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p>Developed a YouTube-like video streaming platform with video playback, search functionality, responsive design, and a familiar UI layout that mimics the core features of YouTube.</p>
+                        <div class="project-links">
+                            <a href="https://shivaditya77.github.io/Youtube_clone/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/shivaditya77/Youtube_clone" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <h2 class="section-title animate">My Resume</h2>
+            <div class="resume-container">
+                <div class="resume-column">
+                    <h3 class="animate">Education</h3>
+                    <div class="resume-item animate">
+                        <span class="resume-date">2022 – 2026</span>
+                        <h3>B.Tech in Computer Science</h3>
+                        <h4>Galgotias University</h4>
+                        <p>CGPA: 9.07</p>
+                        <p>Greater Noida, India</p>
+                    </div>
+                    <div class="resume-item animate" style="animation-delay: 0.2s;">
+                        <span class="resume-date">2020 – 2021</span>
+                        <h3>Intermediate</h3>
+                        <h4>Trident Public School</h4>
+                        <p>Percentage: 76%</p>
+                        <p>Muzaffarpur, India</p>
+                    </div>
+
+                    <h3 class="animate" style="animation-delay: 0.3s;">Coursework</h3>
+                    <div class="resume-item animate" style="animation-delay: 0.3s;">
+                        <ul>
+                            <li>Data Structures & Algorithms (Java)</li>
+                            <li>Database Management System (DBMS)</li>
+                            <li>OOPS Concept</li>
+                            <li>Web Development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resume-column">
+                    <h3 class="animate" style="animation-delay: 0.1s;">Certifications</h3>
+                    <div class="resume-item animate" style="animation-delay: 0.1s;">
+                        <span class="resume-date">2023</span>
+                        <h3>Software Engineering</h3>
+                        <h4>NPTEL - IIT (Online)</h4>
+                    </div>
+                    <div class="resume-item animate" style="animation-delay: 0.2s;">
+                        <span class="resume-date">2024</span>
+                        <h3>Front-End Web Development</h3>
+                        <h4>IBM Skillsbuild (Virtual)</h4>
+                    </div>
+                    <div class="resume-item animate" style="animation-delay: 0.3s;">
+                        <span class="resume-date">2024</span>
+                        <h3>AI-ML Virtual Internship</h3>
+                        <h4>Google (Virtual)</h4>
+                    </div>
+
+                    <h3 class="animate" style="animation-delay: 0.4s;">Technical Skills</h3>
+                    <div class="resume-item animate" style="animation-delay: 0.4s;">
+                        <p><strong>Languages:</strong> C++, C, Java, HTML, CSS, JavaScript, SQL</p>
+                        <p><strong>Developer Tools:</strong> VS Code, Android Studio, IntelliJ Idea</p>
+                        <p><strong>Technologies/Frameworks:</strong> GitHub, ReactJS (Basics)</p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://drive.google.com/file/d/10kf8vUyMfhFPzPtLBvDzaHpPna0WFk8K/view?usp=drive_link" class="btn download-btn animate" style="animation-delay: 0.5s;" target="_blank">Download Resume</a>
+        </div>
+    </section>
+
+    <!-- LinkedIn Section -->
+    <section id="linkedin">
+        <div class="container">
+            <h2 class="section-title animate">LinkedIn Profile</h2>
+            <div class="linkedin-container">
+                <div class="linkedin-stats">
+                    <div class="linkedin-stat-card animate">
+                        <h3>500+</h3>
+                        <p>Connections</p>
+                    </div>
+                    <div class="linkedin-stat-card animate" style="animation-delay: 0.1s;">
+                        <h3>10+</h3>
+                        <p>Recommendations</p>
+                    </div>
+                    <div class="linkedin-stat-card animate" style="animation-delay: 0.2s;">
+                        <h3>5+</h3>
+                        <p>Skills Endorsements</p>
+                    </div>
+                    <div class="linkedin-stat-card animate" style="animation-delay: 0.3s;">
+                        <h3>3+</h3>
+                        <p>Featured Posts</p>
+                    </div>
+                </div>
+                <div class="linkedin-profile animate" style="animation-delay: 0.4s;">
+                    <img src="https://imgs.search.brave.com/uBAdGmpyvJXpXqE20UdxYqAapm-rja6Shww1MmIspuQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGFnZXRyYWZmaWMu/Y29tL2Jsb2cvd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDkv/bGlua2VkaW4tbG9n/by0zRC5wbmc" alt="LinkedIn Profile">
+                    <h3>Shivaditya Singh</h3>
+                    <p>Computer Science Student | Web Developer</p>
+                    <a href="https://www.linkedin.com/in/shivaditya-singh-125a6a280/" class="btn linkedin-btn" target="_blank">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LeetCode Section -->
+    <section id="leetcode">
+        <div class="container">
+            <h2 class="section-title animate">LeetCode Profile</h2>
+            <div class="leetcode-container">
+                <div class="leetcode-stats">
+                    <div class="leetcode-stat-card animate">
+                        <h3>150+</h3>
+                        <p>Problems Solved</p>
+                    </div>
+                    <div class="leetcode-stat-card animate" style="animation-delay: 0.1s;">
+                        <h3>Easy</h3>
+                        <p>70+ Problems</p>
+                    </div>
+                    <div class="leetcode-stat-card animate" style="animation-delay: 0.2s;">
+                        <h3>Medium</h3>
+                        <p>80+ Problems</p>
+                    </div>
+                    <div class="leetcode-stat-card animate" style="animation-delay: 0.3s;">
+                        <h3>Hard</h3>
+                        <p>10+ Problems</p>
+                    </div>
+                </div>
+                <div class="leetcode-profile animate" style="animation-delay: 0.4s;">
+                    <img src="https://assets.leetcode.com/users/leetcode/avatar_1568224780.png" alt="LeetCode Profile">
+                    <h3>Shivaditya Singh</h3>
+                    <p>Data Structures & Algorithms Enthusiast</p>
+                    <a href="https://leetcode.com/u/shivaditya77/" class="btn leetcode-btn" target="_blank">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Section -->
+    <section id="github">
+        <div class="container">
+            <h2 class="section-title animate">GitHub Stats</h2>
+            <div class="github-stats">
+                <div class="stat-card animate">
+                    <h3>10+</h3>
+                    <p>Repositories</p>
+                </div>
+                <div class="stat-card animate" style="animation-delay: 0.1s;">
+                    <h3>100+</h3>
+                    <p>Commits</p>
+                </div>
+                <div class="stat-card animate" style="animation-delay: 0.2s;">
+                    <h3>5+</h3>
+                    <p>Stars</p>
+                </div>
+                <div class="stat-card animate" style="animation-delay: 0.3s;">
+                    <h3>3+</h3>
+                    <p>Contributions</p>
+                </div>
+            </div>
+            <div class="github-projects animate" style="animation-delay: 0.4s;">
+                <h3>Featured GitHub Projects</h3>
+                <div class="projects-grid" style="margin-top: 20px;">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/shivaditya77/Portfolio-Website" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>To-Do List App</h3>
+                            <p>A simple to-do list application with local storage functionality.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/shivaditya77/ToDoList" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Weather App</h3>
+                            <p>A weather application that fetches data from a weather API.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/shivaditya77/WeatherApi" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>Designed and Developed by Shivaditya Singh</p>
+            <p>Copyright © 2025 Shivaditya. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/shivaditya77" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shivaditya-singh-7a2b0a1b7/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://leetcode.com/shivadityasingh7/" target="_blank"><i class="fas fa-code"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:shivadityasingh7@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Active link highlighting
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll animations
+        const animateElements = document.querySelectorAll('.animate');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Typing Animation
+        const typeWriter = (elementId, text, speed) => {
+            const element = document.getElementById(elementId);
+            let i = 0;
+            let isTag = false;
+            let currentText = '';
+            
+            function type() {
+                if (i < text.length) {
+                    // Handle HTML tags
+                    if (text.charAt(i) === '<') {
+                        isTag = true;
+                    }
+                    
+                    currentText += text.charAt(i);
+                    element.innerHTML = currentText;
+                    
+                    if (text.charAt(i) === '>') {
+                        isTag = false;
+                    }
+                    
+                    i++;
+                    
+                    // Don't wait when inside a tag
+                    const delay = isTag ? 0 : speed;
+                    setTimeout(type, delay);
+                } else {
+                    // Remove the cursor after typing completes
+                    element.classList.remove('typewriter');
+                }
+            }
+            
+            type();
+        };
+
+        // Start typing animation when hero section is in view
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    typeWriter('typewriter', 'Hi, I\'m <span>Shivaditya Singh</span>', 100);
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const heroSection = document.querySelector('#home');
+        heroObserver.observe(heroSection);
+    </script>
+</body>
+</html>

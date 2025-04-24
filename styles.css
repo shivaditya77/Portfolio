@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivaditya Singh | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar container">
+            <a href="#" class="logo">Shivaditya.</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#linkedin">LinkedIn</a></li>
+                <li><a href="#leetcode">LeetCode</a></li>
+                <li><a href="#github">GitHub</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content animate">
+                <h1><span class="typewriter" id="typewriter"></span></h1>
+                <p>Software Developer with passion for creating beautiful and functional web applications. I specialize in frontend development with React and modern JavaScript frameworks.</p>
+                <a href="#projects" class="btn">View My Work</a>
+                <div class="social-links">
+                    <a href="https://github.com/shivaditya77" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/shivaditya-singh-125a6a280/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://leetcode.com/shivaditya77/" target="_blank"><i class="fas fa-code"></i></a>
+                    <a href="https://x.com/shivaditya77" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <img src="https://via.placeholder.com/500x500" alt="" class="hero-image animate" style="animation-delay: 0.2s;">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title animate">About Me</h2>
+            <div class="about-content">
+                <div class="about-image animate">
+                    <img src="about.jpeg" alt="Shivaditya Singh" style="max-height: 400px; width: auto;">
+                </div>
+                <div class="about-text animate" style="animation-delay: 0.2s;">
+                    <h3>Software Developer based in India</h3>
+                    <p>I'm a passionate web development enthusiast, currently building my skills and projects in full-stack development. Eager to learn and grow, I enjoy turning ideas into interactive web applications. I love turning complex problems into simple, beautiful and intuitive solutions.</p>
+                    <p>When I'm not coding, you'll find me at the gym, watching YouTube development tutorials, or contributing to open source projects.</p>
+                    
+                    <div class="skills">
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>React</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Node.js</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>UI/UX Design</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title animate">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card animate">
+                    <div class="project-image">
+                        <img src="lce.jpeg" alt="Live Code Editor" style="object-position: top;">
+                    </div>
+                    
+                    <div class="project-info">
+                        <h3>Live Code Editor</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p>Developed an interactive Live Code Editor using HTML, CSS, and JavaScript that allows users to write and test code in real-time with separate panels for HTML, CSS, and JavaScript.</p>
+                        <div class="project-links">
+                            <a href="https://shivaditya77.github.io/Live_Code-_editor/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/shivaditya77/Live_Code-_editor" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card animate" style="animation-delay: 0.2s;">
+                    <div class="project-image">
+                        <img src="diamondminner.jpeg" alt="Diamond Miner Game" style="object-position: center;">
+                    </div>
+                    <div class="project-info">
+                        <h3>Diamond Miner Game</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p>Developed a 2D Diamond Miner game using HTML, CSS, and JavaScript with interactive gameplay, score tracking, and timer functionality where players collect diamonds while avoiding obstacles.</p>
+                        <div class="project-links">
+                            <a href="https://shivaditya77.github.io/diamond_mining_game/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/shivaditya77/diamond_mining_game" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card animate" style="animation-delay: 0.4s;">
+                    <div class="project-image">
+                        <img src="ytclone.jpeg" alt="YouTube Clone" style="object-position: top;">
+                    </div>
+                    
+                    <div class="project-info">
+                        <h3>YouTube Clone</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p>Developed a YouTube-like video streaming platform with video playback, search functionality, responsive design, and a familiar UI layout that mimics the core features of YouTube.</p>
+                        <div class="project-links">
+                            <a href="https://shivaditya77.github.io/Youtube_clone/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/shivaditya77/Youtube_clone" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <h2 class="section-title animate">My Resume</h2>
+            <div class="resume-container">
+                <div class="resume-column">
+                    <h3 class="animate">Education</h3>
+                    <div class="resume-item animate">
+                        <span class="resume-date">2022 – 2026</span>
+                        <h3>B.Tech in Computer Science</h3>
+                        <h4>Galgotias University</h4>
+                        <p>CGPA: 9.07</p>
+                        <p>Greater Noida, India</p>
+                    </div>
+                    <div class="resume-item animate" style="animation-delay: 0.2s;">
+                        <span class="resume-date">2020 – 2021</span>
+                        <h3>Intermediate</h3>
+                        <h4>Trident Public School</h4>
+                        <p>Percentage: 76%</p>
+                        <p>Muzaffarpur, India</p>
+                    </div>
+
+                    <h3 class="animate" style="animation-delay: 0.3s;">Coursework</h3>
+                    <div class="resume-item animate" style="animation-delay: 0.3s;">
+                        <ul>
+                            <li>Data Structures & Algorithms (Java)</li>
+                            <li>Database Management System (DBMS)</li>
+                            <li>OOPS Concept</li>
+                            <li>Web Development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resume-column">
+                    <h3 class="animate" style="animation-delay: 0.1s;">Certifications</h3>
+                    <div class="resume-item animate" style="animation-delay: 0.1s;">
+                        <span class="resume-date">2023</span>
+                        <h3>Software Engineering</h3>
+                        <h4>NPTEL - IIT (Online)</h4>
+                    </div>
+                    <div class="resume-item animate" style="animation-delay: 0.2s;">
+                        <span class="resume-date">2024</span>
+                        <h3>Front-End Web Development</h3>
+                        <h4>IBM Skillsbuild (Virtual)</h4>
+                    </div>
+                    <div class="resume-item animate" style="animation-delay: 0.3s;">
+                        <span class="resume-date">2024</span>
+                        <h3>AI-ML Virtual Internship</h3>
+                        <h4>Google (Virtual)</h4>
+                    </div>
+
+                    <h3 class="animate" style="animation-delay: 0.4s;">Technical Skills</h3>
+                    <div class="resume-item animate" style="animation-delay: 0.4s;">
+                        <p><strong>Languages:</strong> C++, C, Java, HTML, CSS, JavaScript, SQL</p>
+                        <p><strong>Developer Tools:</strong> VS Code, Android Studio, IntelliJ Idea</p>
+                        <p><strong>Technologies/Frameworks:</strong> GitHub, ReactJS (Basics)</p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://drive.google.com/file/d/10kf8vUyMfhFPzPtLBvDzaHpPna0WFk8K/view?usp=drive_link" class="btn download-btn animate" style="animation-delay: 0.5s;" target="_blank">Download Resume</a>
+        </div>
+    </section>
+
+    <!-- LinkedIn Section -->
+    <section id="linkedin">
+        <div class="container">
+            <h2 class="section-title animate">LinkedIn Profile</h2>
+            <div class="linkedin-container">
+                <div class="linkedin-stats">
+                    <div class="linkedin-stat-card animate">
+                        <h3>500+</h3>
+                        <p>Connections</p>
+                    </div>
+                    <div class="linkedin-stat-card animate" style="animation-delay: 0.1s;">
+                        <h3>10+</h3>
+                        <p>Recommendations</p>
+                    </div>
+                    <div class="linkedin-stat-card animate" style="animation-delay: 0.2s;">
+                        <h3>5+</h3>
+                        <p>Skills Endorsements</p>
+                    </div>
+                    <div class="linkedin-stat-card animate" style="animation-delay: 0.3s;">
+                        <h3>3+</h3>
+                        <p>Featured Posts</p>
+                    </div>
+                </div>
+                <div class="linkedin-profile animate" style="animation-delay: 0.4s;">
+                    <img src="https://imgs.search.brave.com/uBAdGmpyvJXpXqE20UdxYqAapm-rja6Shww1MmIspuQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGFnZXRyYWZmaWMu/Y29tL2Jsb2cvd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDkv/bGlua2VkaW4tbG9n/by0zRC5wbmc" alt="LinkedIn Profile">
+                    <h3>Shivaditya Singh</h3>
+                    <p>Computer Science Student | Web Developer</p>
+                    <a href="https://www.linkedin.com/in/shivaditya-singh-125a6a280/" class="btn linkedin-btn" target="_blank">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LeetCode Section -->
+    <section id="leetcode">
+        <div class="container">
+            <h2 class="section-title animate">LeetCode Profile</h2>
+            <div class="leetcode-container">
+                <div class="leetcode-stats">
+                    <div class="leetcode-stat-card animate">
+                        <h3>150+</h3>
+                        <p>Problems Solved</p>
+                    </div>
+                    <div class="leetcode-stat-card animate" style="animation-delay: 0.1s;">
+                        <h3>Easy</h3>
+                        <p>70+ Problems</p>
+                    </div>
+                    <div class="leetcode-stat-card animate" style="animation-delay: 0.2s;">
+                        <h3>Medium</h3>
+                        <p>80+ Problems</p>
+                    </div>
+                    <div class="leetcode-stat-card animate" style="animation-delay: 0.3s;">
+                        <h3>Hard</h3>
+                        <p>10+ Problems</p>
+                    </div>
+                </div>
+                <div class="leetcode-profile animate" style="animation-delay: 0.4s;">
+                    <img src="https://assets.leetcode.com/users/leetcode/avatar_1568224780.png" alt="LeetCode Profile">
+                    <h3>Shivaditya Singh</h3>
+                    <p>Data Structures & Algorithms Enthusiast</p>
+                    <a href="https://leetcode.com/u/shivaditya77/" class="btn leetcode-btn" target="_blank">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Section -->
+    <section id="github">
+        <div class="container">
+            <h2 class="section-title animate">GitHub Stats</h2>
+            <div class="github-stats">
+                <div class="stat-card animate">
+                    <h3>10+</h3>
+                    <p>Repositories</p>
+                </div>
+                <div class="stat-card animate" style="animation-delay: 0.1s;">
+                    <h3>100+</h3>
+                    <p>Commits</p>
+                </div>
+                <div class="stat-card animate" style="animation-delay: 0.2s;">
+                    <h3>5+</h3>
+                    <p>Stars</p>
+                </div>
+                <div class="stat-card animate" style="animation-delay: 0.3s;">
+                    <h3>3+</h3>
+                    <p>Contributions</p>
+                </div>
+            </div>
+            <div class="github-projects animate" style="animation-delay: 0.4s;">
+                <h3>Featured GitHub Projects</h3>
+                <div class="projects-grid" style="margin-top: 20px;">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/shivaditya77/Portfolio-Website" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>To-Do List App</h3>
+                            <p>A simple to-do list application with local storage functionality.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/shivaditya77/To-Do-List" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Weather App</h3>
+                            <p>A weather application that fetches data from a weather API.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/shivaditya77/Weather-App" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>Designed and Developed by Shivaditya Singh</p>
+            <p>Copyright © 2025 Shivaditya. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/shivaditya77" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shivaditya-singh-7a2b0a1b7/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://leetcode.com/shivadityasingh7/" target="_blank"><i class="fas fa-code"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:shivadityasingh7@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
